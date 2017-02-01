@@ -242,6 +242,7 @@ object SparkBuild extends PomBuild {
       .map(file),
     incOptions := incOptions.value.withNameHashing(true),
     publishMavenStyle := true,
+    scalacOptions in Compile ++= Seq("-Xmax-classfile-name", "128"),
     unidocGenjavadocVersion := "0.10",
 
     // Override SBT's default resolvers:
